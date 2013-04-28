@@ -13,22 +13,16 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="frame">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>100</height>
-      </size>
-     </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <widget class="QLabel" name="label">
         <property name="font">
@@ -54,7 +48,79 @@
        </widget>
       </item>
       <item>
-       <widget class="QTextEdit" name="txtBox_regexp"/>
+       <widget class="QTextEdit" name="txtBox_regexp">
+        <property name="acceptRichText">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_4">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Options : </string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="chkBox_py_ignorecase">
+           <property name="text">
+            <string>IGNORECASE</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QCheckBox" name="chkBox_py_locale">
+           <property name="text">
+            <string>LOCALE</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QCheckBox" name="chkbox_py_multiline">
+           <property name="text">
+            <string>MULTILINE</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QCheckBox" name="chkBox_py_dotall">
+           <property name="text">
+            <string>DOTALL</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="5">
+          <widget class="QCheckBox" name="chkBox_py_unicode">
+           <property name="text">
+            <string>UNICODE</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="6">
+          <widget class="QCheckBox" name="chkBox_py_verbose">
+           <property name="text">
+            <string>VERBOSE</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="7">
+          <widget class="QCheckBox" name="chkBox_py_debug">
+           <property name="text">
+            <string>DEBUG</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -106,12 +172,6 @@
    </item>
    <item>
     <widget class="QFrame" name="frame_2">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>100</height>
-      </size>
-     </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
@@ -255,7 +315,7 @@
       </font>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_findall">
       <attribute name="title">

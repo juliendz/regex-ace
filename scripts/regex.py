@@ -1,13 +1,24 @@
 #27/04/2013 04:30
 import re
 
-def process_regex( regex, input, replacement = "" ):
+def process_regex( regex, input, replacement , flag_ignorecase, flag_locale, flag_multiline, flag_dotall, flag_unicode, flag_verbose, flag_debug ):
+    err_msg = ""
     str_findall = ""
     str_split = ""
     str_sub = ""
-    err_msg = ""
+
+    #re flags
+    flags = 0
+    flags |= re.IGNORECASE if ( flag_ignorecase == 1 ) else 0
+    flags |= re.LOCALE if ( flag_locale == 1 ) else 0
+    flags |= re.MULTILINE if ( flag_multiline == 1 ) else 0
+    flags |= re.DOTALL if ( flag_dotall == 1 ) else 0
+    flags |= re.UNICODE if ( flag_unicode == 1 ) else 0
+    flags |= re.VERBOSE if ( flag_verbose == 1 ) else 0
+    flags |= re.DEBUG if ( flag_debug == 1 ) else 0
+
     try:
-        cregex = re.compile( regex )
+        cregex = re.compile( regex, flags )
 
         #re.findall
         res_findall = cregex.findall( input )
@@ -18,7 +29,7 @@ def process_regex( regex, input, replacement = "" ):
         str_split = str( res_split )
 
         #re.sub
-        res_sub = re.sub( regex, replacement, input )
+        res_sub = re.sub( regex, replacement, input, 0, flags )
         str_sub = str( res_sub )
 
         #re.finditer
@@ -33,4 +44,4 @@ def process_regex( regex, input, replacement = "" ):
     ret = ( err_msg, str_findall, str_split, str_sub )
     return ret
 
-#print process_regex( "(te)(st)", "test test west east best", ":" )
+print process_regex( "(te)(st)", "test test west east best", ":", 0, 0, 0, 0, 0, 0, 0 )

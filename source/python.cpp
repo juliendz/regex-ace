@@ -27,30 +27,44 @@ Python::~Python( ){
     Py_Finalize();
 }
 
-void Python::process_regex( QString regex, QString input, QString &findall, QString &split, QString &sub, QString &err_msg ){
+void Python::process_regex(QString regex, QString input, QString replace, long *flags, QString &findall,
+                QString &split, QString &sub, QString &err_msg ){
 
     PyObject *py_str_regex = PyString_FromString( regex.toStdString( ).c_str( ) );
     PyObject *py_str_input = PyString_FromString( input.toStdString( ).c_str( ) );
+    PyObject *py_str_replace = PyString_FromString( replace.toStdString( ).c_str( ) );
 
 
-    PyObject *args = PyTuple_New( 2 );
+    PyObject *args = PyTuple_New( 10 );
     if ( args == NULL ) {
         PyErr_SetString( PyExc_ReferenceError, "attempt to access a null- pointer" );
     }
     PyTuple_SetItem( args, 0, py_str_regex );
     PyTuple_SetItem( args, 1, py_str_input );
+    PyTuple_SetItem( args, 2, py_str_replace );
+    PyTuple_SetItem( args, 3, PyInt_FromLong( flags[0] ) );
+    PyTuple_SetItem( args, 4, PyInt_FromLong( flags[1] ) );
+    PyTuple_SetItem( args, 5, PyInt_FromLong( flags[2] ) );
+    PyTuple_SetItem( args, 6, PyInt_FromLong( flags[3] ) );
+    PyTuple_SetItem( args, 7, PyInt_FromLong( flags[4] ) );
+    PyTuple_SetItem( args, 8, PyInt_FromLong( flags[5] ) );
+    PyTuple_SetItem( args, 9, PyInt_FromLong( flags[6] ) );
 
     PyObject *retval = PyObject_CallObject( this->func, args );
     Py_DECREF( args );
 
     if( retval == NULL ){
         //TODO:Error handling
+        qDebug() << "retval is null";
         Py_DECREF( this->func );
         Py_DECREF( this->module );
+        return;
     }
 
+    qDebug() << "before call";
     //Get the error message (if any)
     PyObject *o_errmsg = PyTuple_GetItem( retval, 0 );
+    qDebug() << "after call";
     char* cstr_o_errmsg = PyString_AsString( o_errmsg );
 
     //Get the regex results

@@ -12,7 +12,8 @@ public:
     ~Python( );
 
     int error;
-    void process_regex(QString regex, QString input , QString &findall, QString &split, QString &sub, QString &err_msg);
+    void process_regex(QString regex, QString input , QString replacement, long* flags,
+                   QString &findall, QString &split, QString &sub, QString &err_msg );
 
 private:
     PyObject *module;

@@ -55,16 +55,13 @@ void Python::process_regex(QString regex, QString input, QString replace, long *
 
     if( retval == NULL ){
         //TODO:Error handling
-        qDebug() << "retval is null";
         Py_DECREF( this->func );
         Py_DECREF( this->module );
         return;
     }
 
-    qDebug() << "before call";
     //Get the error message (if any)
     PyObject *o_errmsg = PyTuple_GetItem( retval, 0 );
-    qDebug() << "after call";
     char* cstr_o_errmsg = PyString_AsString( o_errmsg );
 
     //Get the regex results

@@ -43,5 +43,3 @@ def process_regex( regex, input, replacement , flag_ignorecase, flag_locale, fla
 
     ret = ( err_msg, str_findall, str_split, str_sub )
     return ret
-
-print process_regex( "(te)(st)", "test test west east best", ":", 0, 0, 0, 0, 0, 0, 0 )

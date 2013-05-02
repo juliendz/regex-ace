@@ -15,16 +15,19 @@ TEMPLATE = app
 SOURCES +=  source/main.cpp \
     source/python.cpp \
     ui/mainform.cpp \
-    ui/pythonform.cpp
+    ui/pythonform.cpp \
+    ui/aboutform.cpp
 
 HEADERS  += \
     headers/python.h \
     ui/mainform.h \
-    ui/pythonform.h
+    ui/pythonform.h \
+    ui/aboutform.h
 
 FORMS    += \
     ui/mainform.ui \
-    ui/pythonform.ui
+    ui/pythonform.ui \
+    ui/aboutform.ui
 
 win32:CONFIG(release, debug|release): LIBS += -LC:/Python27/libs/ -lpython27
 else:win32:CONFIG(debug, debug|release): LIBS += -LC:/Python27/libs/ -lpython27
@@ -33,3 +36,6 @@ else:win32:CONFIG(debug, debug|release): LIBS += -LC:/Python27/libs/ -lpython27
 #DEPENDPATH += $$PWD/C:/Python27/include/
 INCLUDEPATH += C:/Python27/include/
 DEPENDPATH += C:/Python27/include/
+
+RESOURCES += \
+    resources/resources.qrc

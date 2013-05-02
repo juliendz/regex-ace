@@ -14,6 +14,9 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="bottomMargin">
+    <number>2</number>
+   </property>
    <item>
     <widget class="QFrame" name="frame">
      <property name="frameShape">
@@ -49,6 +52,15 @@
       </item>
       <item>
        <widget class="QTextEdit" name="txtBox_regexp">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="tabChangesFocus">
+         <bool>true</bool>
+        </property>
         <property name="acceptRichText">
          <bool>false</bool>
         </property>
@@ -63,6 +75,12 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_5">
            <property name="text">
@@ -72,6 +90,12 @@
          </item>
          <item row="0" column="1">
           <widget class="QCheckBox" name="chkBox_py_ignorecase">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>IGNORECASE</string>
            </property>
@@ -79,6 +103,12 @@
          </item>
          <item row="0" column="2">
           <widget class="QCheckBox" name="chkBox_py_locale">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>LOCALE</string>
            </property>
@@ -86,6 +116,12 @@
          </item>
          <item row="0" column="3">
           <widget class="QCheckBox" name="chkbox_py_multiline">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>MULTILINE</string>
            </property>
@@ -93,6 +129,12 @@
          </item>
          <item row="0" column="4">
           <widget class="QCheckBox" name="chkBox_py_dotall">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>DOTALL</string>
            </property>
@@ -100,6 +142,12 @@
          </item>
          <item row="0" column="5">
           <widget class="QCheckBox" name="chkBox_py_unicode">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>UNICODE</string>
            </property>
@@ -107,6 +155,12 @@
          </item>
          <item row="0" column="6">
           <widget class="QCheckBox" name="chkBox_py_verbose">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>VERBOSE</string>
            </property>
@@ -114,6 +168,12 @@
          </item>
          <item row="0" column="7">
           <widget class="QCheckBox" name="chkBox_py_debug">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>DEBUG</string>
            </property>
@@ -140,6 +200,12 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QLabel" name="label_4">
         <property name="font">
@@ -165,7 +231,17 @@
        </widget>
       </item>
       <item>
-       <widget class="QTextEdit" name="txtBox_replacement"/>
+       <widget class="QTextEdit" name="txtBox_replacement">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="tabChangesFocus">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -198,7 +274,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QTextEdit" name="txtBox_input"/>
+       <widget class="QTextEdit" name="txtBox_input">
+        <property name="tabChangesFocus">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btn_test">
@@ -212,6 +292,10 @@
         </property>
         <property name="text">
          <string>Test</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../resources/resources.qrc">
+          <normaloff>:/new/regxace_resource/test.png</normaloff>:/new/regxace_resource/test.png</iconset>
         </property>
        </widget>
       </item>
@@ -232,6 +316,12 @@
       <string>Results</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QFrame" name="frame_6">
         <property name="frameShape">
@@ -241,6 +331,9 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QFormLayout" name="formLayout_3">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
          <item row="0" column="1">
           <widget class="QLabel" name="label_py_err_msg">
            <property name="font">
@@ -283,12 +376,21 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="label_py_compile">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
             </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
            </property>
            <property name="text">
             <string>re.compile( )</string>
@@ -315,15 +417,37 @@
       </font>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_findall">
       <attribute name="title">
        <string>findall( )</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
+       <property name="leftMargin">
+        <number>4</number>
+       </property>
+       <property name="topMargin">
+        <number>4</number>
+       </property>
+       <property name="rightMargin">
+        <number>4</number>
+       </property>
+       <property name="bottomMargin">
+        <number>4</number>
+       </property>
        <item row="0" column="0">
-        <widget class="QTextEdit" name="txtBox_py_findall"/>
+        <widget class="QTextEdit" name="txtBox_py_findall">
+         <property name="lineWrapMode">
+          <enum>QTextEdit::NoWrap</enum>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="acceptRichText">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -332,8 +456,30 @@
        <string>split( )</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_5">
+       <property name="leftMargin">
+        <number>4</number>
+       </property>
+       <property name="topMargin">
+        <number>4</number>
+       </property>
+       <property name="rightMargin">
+        <number>4</number>
+       </property>
+       <property name="bottomMargin">
+        <number>4</number>
+       </property>
        <item row="0" column="0">
-        <widget class="QTextEdit" name="txtBox_py_split"/>
+        <widget class="QTextEdit" name="txtBox_py_split">
+         <property name="lineWrapMode">
+          <enum>QTextEdit::NoWrap</enum>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="acceptRichText">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -342,8 +488,30 @@
        <string>sub( )</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_6">
+       <property name="leftMargin">
+        <number>4</number>
+       </property>
+       <property name="topMargin">
+        <number>4</number>
+       </property>
+       <property name="rightMargin">
+        <number>4</number>
+       </property>
+       <property name="bottomMargin">
+        <number>4</number>
+       </property>
        <item row="0" column="0">
-        <widget class="QTextEdit" name="txtBox_py_sub"/>
+        <widget class="QTextEdit" name="txtBox_py_sub">
+         <property name="lineWrapMode">
+          <enum>QTextEdit::NoWrap</enum>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="acceptRichText">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -351,6 +519,25 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <tabstops>
+  <tabstop>txtBox_regexp</tabstop>
+  <tabstop>txtBox_replacement</tabstop>
+  <tabstop>txtBox_input</tabstop>
+  <tabstop>btn_test</tabstop>
+  <tabstop>chkBox_py_ignorecase</tabstop>
+  <tabstop>chkBox_py_locale</tabstop>
+  <tabstop>chkbox_py_multiline</tabstop>
+  <tabstop>chkBox_py_dotall</tabstop>
+  <tabstop>chkBox_py_unicode</tabstop>
+  <tabstop>chkBox_py_verbose</tabstop>
+  <tabstop>chkBox_py_debug</tabstop>
+  <tabstop>tabWidget_py_results</tabstop>
+  <tabstop>txtBox_py_findall</tabstop>
+  <tabstop>txtBox_py_split</tabstop>
+  <tabstop>txtBox_py_sub</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resources/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

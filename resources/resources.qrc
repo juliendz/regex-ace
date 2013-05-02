@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/new/regxace_resource">
+        <file>regxace_logo.png</file>
+        <file>python.png</file>
+        <file>test.png</file>
+    </qresource>
+</RCC>

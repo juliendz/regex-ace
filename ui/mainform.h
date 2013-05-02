@@ -2,6 +2,7 @@
 #define MAINFORM_H
 
 #include <QMainWindow>
+#include "aboutform.h"
 #include "pythonform.h"
 
 namespace Ui {
@@ -21,6 +22,8 @@ private:
 
 public slots:
     void start_python_session( );
+    void show_about( );
+    void close_session_tab( int index );
 };
 
 #endif // MAINFORM_H

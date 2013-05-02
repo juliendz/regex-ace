@@ -15,6 +15,7 @@ PythonForm::PythonForm(QWidget *parent) : QWidget(parent), ui(new Ui::PythonForm
 
 PythonForm::~PythonForm() {
 
+    delete this->pyobj;
     delete ui;
 }
 

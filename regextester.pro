@@ -30,12 +30,12 @@ FORMS    += \
     ui/aboutform.ui
 
 win32:CONFIG(release, debug|release): LIBS += -LC:/Python27/libs/ -lpython27
-else:win32:CONFIG(debug, debug|release): LIBS += -LC:/Python27/libs/ -lpython27
+else:unix:CONFIG(debug, debug|release): LIBS += -L/usr/lib/python2.7/config/ -lpython2.7
 
-#INCLUDEPATH += $$PWD/C:/Python27/include/
-#DEPENDPATH += $$PWD/C:/Python27/include/
-INCLUDEPATH += C:/Python27/include/
-DEPENDPATH += C:/Python27/include/
+win32:INCLUDEPATH += C:/Python27/include/
+win32:DEPENDPATH += C:/Python27/include/
+unix:INCLUDEPATH += /usr/include/python2.7
+unix:DEPENDPATH += /usr/include/python2.7
 
 RESOURCES += \
     resources/resources.qrc

@@ -2,9 +2,10 @@
 
 Python::Python( ){
 
-    //Py_SetPythonHome( "C:\\Python27" );
     Py_Initialize( );
-    PyObject *module_name = PyUnicode_FromString( "scripts.regex" );
+    PyObject* sysPath = PySys_GetObject((char*)"path");
+    PyList_Append(sysPath, PyString_FromString("."));
+    PyObject *module_name = PyUnicode_FromString("scripts.regex");
     this->module = PyImport_Import( module_name );
     Py_DECREF( module_name );
 

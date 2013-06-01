@@ -4,7 +4,7 @@
 AboutForm::AboutForm(QWidget *parent) : QDialog(parent), ui(new Ui::AboutForm) {
 
     ui->setupUi(this);
-    ui->label_version->setText( "1.0 beta" );
+    ui->label_version->setText( "1.0 (stable)" );
 
 }
 

@@ -10,14 +10,23 @@ Python::Python( ){
     Py_DECREF( module_name );
 
     if( this->module == NULL ){
-        //TODO:Error handling
+        this->startup = 1;
+        QMessageBox msgBox;
+        msgBox.setText( "FATAL: Could not load python regex script" );
+        msgBox.exec();
+        return;
     }
 
     this->func = PyObject_GetAttrString( this->module, "process_regex" );
 
     if( !this->func && !PyCallable_Check( this->func ) ){
-        //TODO:Error handling
+        this->startup = 1;
+        QMessageBox msgBox;
+        msgBox.setText( "FATAL: Could not import script function" );
+        msgBox.exec();
+        return;
     }
+    this->startup = 0;
 }
 
 
@@ -55,7 +64,9 @@ void Python::process_regex(QString regex, QString input, QString replace, long *
     Py_DECREF( args );
 
     if( retval == NULL ){
-        //TODO:Error handling
+        QMessageBox msgBox;
+        msgBox.setText( "FATAL: Call to script function failed" );
+        msgBox.exec();
         Py_DECREF( this->func );
         Py_DECREF( this->module );
         return;

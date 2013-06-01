@@ -4,6 +4,8 @@
 #include <Python.h>
 #include <QString>
 #include <QDebug>
+#include <QMessageBox>
+
 
 class Python{
 
@@ -12,6 +14,7 @@ public:
     ~Python( );
 
     int error;
+    int startup;
     void process_regex(QString regex, QString input , QString replacement, long* flags,
                    QString &findall, QString &split, QString &sub, QString &err_msg );
 

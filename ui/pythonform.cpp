@@ -5,12 +5,16 @@ PythonForm::PythonForm(QWidget *parent) : QWidget(parent), ui(new Ui::PythonForm
 
     ui->setupUi(this);
 
-    //Create the python regex object
-    this->pyobj = new Python;
-
     //connections
     connect( this->ui->txtBox_regexp, SIGNAL( textChanged( ) ), this, SLOT( process_regex( ) ) );
     connect( this->ui->btn_test, SIGNAL( clicked( ) ), this, SLOT( process_regex( ) ) );
+
+    //Create the python regex object
+    this->pyobj = new Python;
+    if( this->pyobj->startup == 1 ){
+        this->ui->txtBox_regexp->setEnabled( false );
+        this->ui->btn_test->setEnabled( false );
+    }
 }
 
 PythonForm::~PythonForm() {
